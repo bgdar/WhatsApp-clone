@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>websocket</title>
+    <link rel="stylesheet" href="../css/chat.css" />
+
+    <script src="https://cdn.socket.io/4.5.1/socket.io.min.js"></script>
+  </head>
+  <body>
+    <div class="back">
+      <!-- jika saya langsung kembali begini maka akan menjalankan disconnext -->
+      <button><a href="/">back</a></button>
+    </div>
+    <main>
+      <div class="User">
+        <p class="user-name">Contoh : bgdar</p>
+      </div>
+      <section class="boxComment">
+        <div class="chat">
+          <!-- message yg di dpat dari server -->
+          <p>contoh pesan</p>
+          <p>contoh pesan</p>
+        </div>
+      </section>
+
+      <section class="send-message">
+        <div class="send">
+          <textarea name="" id="messageInput"></textarea>
+          <button id="sendMessage">Send</button>
+        </div>
+      </section>
+    </main>
+    <script src="../js/chat.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+body {
+  /* display: flex;
+  justify-content: center;
+  box-sizing: border-box; */
+  padding: 10px;
+  margin: 0;
+}
+
+/* tombol kembali */
+.back {
+  z-index: 10;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.back button {
+  border: none;
+  background-color: antiquewhite;
+  color: darkgrey;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+.back button:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+main {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+  justify-content: center;
+  max-width: 80vw;
+  max-height: 88vh;
+  background-color: chocolate;
+  position: relative;
+}
+/* box command  */
+.boxComment .chat {
+  position: relative;
+}
+
+/* tombol  di message */
+.boxComment .chat .messageClose {
+  position: absolute;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border: none;
+  background-color: rgb(244, 16, 16);
+  border-radius: 10px;
+  color: #f1f1f1;
+}
+.messageClose:hover {
+  background-color: rgb(239, 68, 68);
+  width: 18px;
+  height: 18px;
+}
+
+/* bagina send pesan  */
+.send-message {
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+}
+.send-message .send {
+  background-color: burlywood;
+}
