@@ -1,5 +1,5 @@
 // Hubungkan ke server perhatikan saat deployment
-const socket = io("http://localhost:3002");
+const socket = io("http://localhost:5005");
 
 // Tampilkan pesan selamat datang
 

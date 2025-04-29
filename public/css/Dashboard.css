@@ -1,93 +1,127 @@
+:root {
+  --bacground-color: #fcf5eb;
+  --primary-color: #8b72be;
+  --secondary-color: #d5c3fd;
+  --accent-dark: #6b665c;
+  --accent-light: #e4d7c1;
+  --text-color: #333;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #add8e6; /* Light Blue */
-  color: #000000; /* Black */
+  background-color: var(--bacground-color);
+  font-family: "Poppins", sans-serif;
   margin: 0;
-  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
-
-h1,
-h2 {
-  text-align: center;
-  margin: 20px 0;
-}
-
-h1 {
-  color: #00008b; /* Dark Blue */
-  text-shadow: 2px 2px #3e2723; /* Dark Gray Shadow */
-}
-
-h2 {
-  color: #800080; /* Purple */
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-  padding: 20px;
-  background-color: #ffffff; /* White Card */
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  margin: auto;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  margin: 10px 0;
-}
-
-ul li a {
-  text-decoration: none;
-  color: #20b2aa; /* Light Sea Green */
-  font-weight: bold;
-}
-
-ul li a:hover {
-  text-decoration: underline;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #ffa500; /* Orange */
-  color: #ffffff; /* White */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button:hover {
-  background-color: #ff0000; /* Red */
-}
-
-.card {
-  background-color: #f5f5dc; /* Beige */
-  border: 2px solid #d2b48c; /* Tan */
-  border-radius: 8px;
-  padding: 15px;
-  margin: 10px 0;
+nav {
+  box-sizing: border-box;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  background-color: var(--accent-light);
+  opacity: 0.8;
   width: 100%;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+nav .logo svg {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav ul li {
+  position: relative;
+  list-style: none;
+  display: inline-block;
+  padding: 8px 16px;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-footer {
-  margin-top: 20px;
-  text-align: center;
-  padding: 10px;
-  background-color: #2e8b57; /* Sea Green */
-  color: #ffffff; /* White */
+nav ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(
+    --primary-color
+  ); /* Ganti sesuai warna yang diinginkan */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav ul li:hover::after {
+  width: 100%;
+}
+
+/* Main menu */
+main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+main .container {
+  justify-items: center;
+  padding: 2.3rem;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr; /* 2 kolom: kiri dan kanan */
+  grid-template-rows: auto auto; /* 2 baris untuk bagian kanan */
+  grid-template-areas:
+    "section-one section-two"
+    "section-one section-three";
+  gap: 1.5rem;
+}
+main .container .section-one {
+  grid-area: section-one;
+  background-color: var(--primary-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+main .container .section-two {
+  grid-area: section-two;
+
+  padding: 2rem;
+  border-radius: 1rem;
+  opacity: 0.5;
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+main .container .section-two img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+main .container .section-three {
+  grid-area: section-three;
+  background-color: var(--accent-dark);
+  padding: 2rem;
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  main.container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .section-one,
+  .section-two,
+  .section-three {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
 }
