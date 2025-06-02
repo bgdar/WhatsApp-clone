@@ -1,14 +1,10 @@
 # WhastApp Clone
 
-## Description **Api or Url**
-
-- `/` = url Halaman utama WahtsApp
-- `/chat` = halaman pesan bisa di kirimkan
-  nantik setiap pesan berdasarkan ID atau nomorsetiap orang
-
 ## Description **Module**
 
-- Websocket =
+## alur program
+
+saat tombol chat di tekan akan masuk ke nomor yang menjadi target pesan dan saat di kirim pesan , pesanya akan di kirim ke nomor tersebut dan hnay pemilik nomro atau atntar client yang bisa melihat pesanya
 
 ## Description **Folder**
 
@@ -27,5 +23,3 @@ To run:
 ```bash
 bun run main.ts
 ```
-
-This project was created using `bun init` in bun v1.1.34. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

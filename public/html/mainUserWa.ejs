@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>whatsAppp</title>
+    <link rel="stylesheet" href="/css/mainUserWa.css" />
+
+    <script src="https://cdn.socket.io/4.5.1/socket.io.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="container-message">
+        <!-- messsage dari JS -->
+      </div>
+    </header>
+    <div class="container">
+      <!-- nav yang paling di sebelah kirir -->
+      <nav>
+        <div><img src="" alt="img" /></div>
+        <div class="profil">
+          <p>nama</p>
+          <p>Nomor</p>
+        </div>
+      </nav>
+      <!-- nav yang paling di sebelah kirir end -->
+
+      <!-- bagian user  Chatcs statart-->
+      <section class="user-chats">
+        <header>
+          <h3>Chats</h3>
+          <p class="info-user"></p>
+        </header>
+        <p>Your nomor: <%= nomorUser %></p>
+
+        <div class="allUsers">
+          <% if (dataTarget) { %> <% dataTarget.forEach(data => { %>
+          <div class="user">
+            <% if (data.numberInt != nomorUser ) { %>
+            <p class="nama-target"><%= data.username %></p>
+            <p class="nomor-target"><%= data.numberInt %></p>
+
+            <input type="hidden" class="nomor-user" value="<%= nomorUser %>" />
+            <input type="hidden" class="nama-user" value="<%= namaUser %>" />
+            <button class="btn-open-chat">Chat</button>
+            <% } %>
+          </div>
+          <% }) %> <% } %>
+        </div>
+      </section>
+
+      <!-- bagian user  Chatcs end-->
+
+      <!-- main char ke usernya start -->
+      <main>
+        <header>
+          <div class="user-image">
+            <img src="#" alt="" />
+          </div>
+          <h4 class="show-name-target"></h4>
+          <div class="Achievement">
+            <button>telpon</button>
+            <button>lainya</button>
+            <button>vidio</button>
+          </div>
+        </header>
+
+        <div class="chat">
+          <ul class="chat"></ul>
+          <!-- Pesan akan dimasukkan ke sini -->
+        </div>
+
+        <div class="box-message">
+          <div class="message">
+            <input type="text" placeholder="send message" class="messageChat" />
+            <input type="hidden" class="nomor-user" value="<%= nomorUser %>" />
+            <input type="hidden" class="nama-user" value="<%= namaUser %>" />
+            <button type="button" class="btn-send-message">send</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- main char ke usernya end -->
+    </div>
+
+    <script type="module" src="/js/mainUserWa.js"></script>
+  </body>
+</html>

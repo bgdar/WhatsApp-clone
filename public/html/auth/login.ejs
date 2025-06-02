@@ -4,27 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
-    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/auth/login.css" />
   </head>
   <body>
     <p class="response"></p>
-    <div class="card-login">
-      <form id="sendLoginForm">
-        <h3>Create your accons</h3>
-        <input type="text" name="username" placeholder="masukan name..." />
-        <input
-          type="password"
-          name="password"
-          placeholder="masukan password ..."
-        />
-        <input
-          type="number"
-          name="number"
-          placeholder="masukan nomor chating anda"
-        />
-        <button type="submit">Send</button>
-      </form>
-    </div>
+    <section class="card-login-top">
+      <img src="/img/whatsapp.png" alt="" />
+      <div class="description">
+        <h2>Dowload Whastsaap from <%- "winsowa" %></h2>
+        <p>make call ..</p>
+      </div>
+      <div class="dowload">
+        <a href="https://web.whatsapp.com/"><p>Go Download</p></a>
+      </div>
+    </section>
+
+    <section class="card-login-botton">
+      <div class="login">
+        <h4>Enter Your Number</h4>
+        <form id="login-form" method="POST" action="/user/login">
+          <input
+            type="number"
+            name="phone"
+            id="phone"
+            placeholder="Phone Number"
+            required
+          />
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Your Name ka kanda"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+
+      <div class="register">
+        <h4>Don't have an account?</h4>
+        <button type="button">
+          <a href="/user/register"><p>Register</p></a>
+        </button>
+      </div>
+    </section>
 
     <script src="../js/login.js"></script>
   </body>
